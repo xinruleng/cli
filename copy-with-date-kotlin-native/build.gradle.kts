@@ -32,5 +32,12 @@ kotlin {
     sourceSets {
         val nativeMain by getting
         val nativeTest by getting
+
+        commonMain {
+            dependencies {
+                // https://github.com/Kotlin/kotlinx-datetime
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.0-RC.2")
+            }
+        }
     }
 }
