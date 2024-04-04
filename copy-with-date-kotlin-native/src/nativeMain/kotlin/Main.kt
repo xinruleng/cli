@@ -2,11 +2,18 @@ import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import okio.FileSystem
+import okio.Path.Companion.toPath
 
 fun main() {
-    val name = "a.apk"
+    val name = "README.md"
     val newName = createNewName(name)
     println("$name -> $newName")
+
+    val source = name.toPath()
+    val target = newName.toPath()
+
+    FileSystem.SYSTEM.copy(source, target)
 }
 
 fun createNewName(name: String, date: LocalDate? = null): String {
