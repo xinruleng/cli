@@ -37,6 +37,8 @@ kotlin {
             dependencies {
                 // https://github.com/Kotlin/kotlinx-datetime
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.0-RC.2")
+
+                implementation("com.squareup.okio:okio:3.9.0")
             }
         }
     }
